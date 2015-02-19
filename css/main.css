@@ -1,3 +1,47 @@
+h1 {
+  text-align: center;
+  margin: 30px 0; }
 
+h2 {
+  font-size: 25px; }
+
+.details, .charges, .earnings {
+  border: 2px black solid; }
+
+.details input {
+  margin-top: 10px; }
+.details h4 {
+  margin-left: 20px; }
+.details .row {
+  padding: 30px 0px 70px; }
+
+.charges h4 {
+  margin-left: 20px; }
+.charges table {
+  margin: 15px 0 15px 15px; }
+.charges td:first-child {
+  float: right; }
+
+.earnings {
+  margin-top: 25px; }
+  .earnings table {
+    margin: 15px 0 15px 70px; }
+  .earnings td:first-child span {
+    float: right; }
+  .earnings td:nth-child(2) {
+    padding-left: 10px; }
+
+.title {
+  border-bottom: 2px black solid; }
+  .title h2 {
+    text-align: center; }
+
+.actionButtons {
+  margin: 100px auto 30px;
+  width: 125px; }
+
+.reset {
+  float: right;
+  margin: 45px 90px 0 0; }
 
 /*# sourceMappingURL=main.css.map */
