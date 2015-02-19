@@ -24,10 +24,12 @@ angular.module('myApp',['ngMessages'])
 			}
 		};
 		$scope.cancel = function(){
-			console.log('cancel');
+			console.log('Canceling Order');
 			$scope.calc = {};
 		};
 		$scope.reset = function(){
-
+			console.log('Resetting Calculator');
+			$scope.calc = {};
+			$scope.metrics = {};
 		};
 	}]);
