@@ -19,6 +19,7 @@ angular.module('myApp',['ngMessages'])
 				$scope.metrics.mealCount ++;
 
 				$scope.calc = {};
+				$scope.detailsForm.$pristine = true;
 			} else {
 				console.log('This is invalid');
 			}
