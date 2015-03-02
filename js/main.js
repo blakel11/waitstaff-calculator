@@ -27,10 +27,12 @@ angular.module('myApp',['ngMessages'])
 		$scope.cancel = function(){
 			console.log('Canceling Order');
 			$scope.calc = {};
+			$scope.detailsForm.$pristine = true;
 		};
 		$scope.reset = function(){
 			console.log('Resetting Calculator');
 			$scope.calc = {};
 			$scope.metrics = {};
+			$scope.detailsForm.$pristine = true;
 		};
 	}]);
