@@ -1,4 +1,20 @@
-angular.module('myApp',['ngMessages'])
+angular.module('myApp',['ngMessages', 'ngRoute'])
+	.config(['$routeProvider',function($routeProvider) {
+		$routeProvider.when('/', {
+			templateUrl: 'home.html',
+			controller: 'MyCtrl'
+		})
+		.when('/new-meal', {
+			templateUrl: 'new-meal.html',
+			controller: 'MyCtrl'
+		})
+		.when('/my-earnings', {
+			templateUrl: 'my-earnings.html',
+			controller: 'MyCtrl'
+		})
+		.otherwise('/');
+
+	}])
 	.controller('MyCtrl', ['$scope', function($scope){
 		$scope.metrics = {
 			subTotal : null,
@@ -33,6 +49,6 @@ angular.module('myApp',['ngMessages'])
 			console.log('Resetting Calculator');
 			$scope.calc = {};
 			$scope.metrics = {};
-			$scope.detailsForm.$pristine = true;
+			//$scope.detailsForm.$pristine = true;
 		};
 	}]);

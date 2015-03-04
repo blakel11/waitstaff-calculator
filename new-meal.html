@@ -1,0 +1,71 @@
+<div id="newMeal">
+    <div class="details">
+        <div class="title">
+            <h2>Enter the Meals Details</h2>
+        </div>
+        <div class="row">
+            <form name="detailsForm" novalidate ng-submit="submit()">
+                <div class="clearfix">
+                    <div class="col-sm-6">
+                        <h4>Base Meal Price: $</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" ng-model="calc.basePrice" name="basePrice" required />
+                        <div ng-if="detailsForm.$submitted && !detailsForm.$pristine" ng-messages="detailsForm.basePrice.$error">
+                            <span class="error" ng-message="required">Field is required!</span>
+                            <span class="error" ng-message="number">Please use a Number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col-sm-6">
+                        <h4>Tax Rate: %</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" ng-model="calc.taxRate" name="taxRate" required />
+                        <div ng-if="detailsForm.$submitted && !detailsForm.$pristine" ng-messages="detailsForm.taxRate.$error">
+                            <span class="error" ng-message="required">Field is required!</span>
+                            <span class="error" ng-message="number">Please use a Number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col-sm-6">
+                        <h4>Tip Percentage: %</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" ng-model="calc.tip" name="tip" required />
+                        <div ng-if="detailsForm.$submitted && !detailsForm.$pristine" ng-messages="detailsForm.tip.$error">
+                            <span class="error" ng-message="required">Field is required!</span>
+                            <span class="error" ng-message="number">Please use a Number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix actionButtons">
+                    <input type="submit" name="submit" />
+                    <button type="button" ng-click="cancel()">Cancel </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="charges">
+        <div class="title">
+            <h2>Customer Charges</h2>
+        </div>
+        <table>
+            <tr>
+                <td><h4>Subtotal:</h4></td>
+                <td><h4>{{metrics.subTotal || 0 | currency}}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>Tip:</h4></td>
+                <td><h4>{{metrics.tip || 0 | currency}}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>Total:</h4></td>
+                <td><h4>{{metrics.subTotal + metrics.tip || 0 | currency}}</h4></td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="charges">
+	<div class="title">
+		<h2>Customer Charges</h2>
+	</div>
+	<table>
+		<tr>
+			<td><h4>Subtotal:</h4></td>
+			<td><h4>{{metrics.subTotal || 0 | currency}}</h4></td>
+		</tr>
+		<tr>
+			<td><h4>Tip:</h4></td>
+			<td><h4>{{metrics.tip || 0 | currency}}</h4></td>
+		</tr>
+		<tr>
+			<td><h4>Total:</h4></td>
+			<td><h4>{{metrics.subTotal + metrics.tip || 0 | currency}}</h4></td>
+		</tr>
+	</table>
+</div>
+<div class="earnings">
+	<div class="title">
+		<h2>My Earnings Info</h2>
+	</div>
+	<table>
+		<tr>
+			<td><h4>Tip Total<span>:</span></h4></td>
+			<td><h4>{{metrics.tipTotal || 0 | currency}}</h4></td>
+		</tr>
+		<tr>
+			<td><h4>Meal Count<span>:</span></h4></td>
+			<td><h4>{{metrics.mealCount || 0 | number}}</h4></td>
+		</tr>
+		<tr>
+			<td><h4>Average Tip Per Meal<span>:</span></h4></td>
+			<td><h4>{{(metrics.tipTotal / metrics.mealCount) || 0 | currency}}</h4></td>
+		</tr>
+	</table>
+</div>
+<button class="reset" ng-click="reset()">Reset</button>
