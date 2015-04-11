@@ -1,5 +1,18 @@
-angular.module('myApp',['ngMessages', 'ngRoute'])
-	.config(['$routeProvider',function($routeProvider) {
+angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
+	.run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+        $location.path("/error");
+    });
+    $rootScope.$on('$routeChangeStart', function() {
+        $rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 2000);
+    })
+  })
+	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.when('/', {
 			templateUrl: 'home.html',
 			controller: 'MyCtrl'

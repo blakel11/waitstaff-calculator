@@ -1,3 +1,5 @@
+
+
 .nav {
 	text-align: center;
 	margin: 15px 0;
@@ -85,3 +87,38 @@ h2 {
 	float: right;
 	margin: 45px 90px 45px 0;
 }
+
+
+/*****************************
+				Animations
+*****************************/
+
+.loading {
+  position:absolute;
+  height: auto;
+  width: 100%;
+  top: 0px;
+
+  &:before {
+  position: fixed;
+  content:"";
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  opacity: 1;
+  background:rgba(255,255,255,1) no-repeat center center;
+  background-image: url('img/loading-animation.gif');
+  }
+}
+
+
+.animate-view.ng-enter,
+    .animate-view.ng-leave {
+        transition: 1s linear all;
+    }
+.animate-view.ng-enter { opacity:0; }
+.animate-view.ng-enter.ng-enter-active { opacity:1; }
+.animate-view.ng-leave { opacity:1; }
+.animate-view.ng-leave.ng-leave-active { opacity:0; }
